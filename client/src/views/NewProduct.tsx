@@ -1,20 +1,5 @@
-import { Link, Form, useActionData, type ActionFunctionArgs } from "react-router-dom"
+import { Link, Form, useActionData } from "react-router-dom"
 import ErrorMessage from "../components/ErrorMessage"
-
-export async function action({request} : ActionFunctionArgs) {
-  const data = Object.fromEntries(await request.formData())
-
-  let error = ''
-  if(Object.values(data).includes('')) {
-    error = 'Todos los campos son obligatorios'
-  }
-
-  if(error.length) {
-    return error
-  }
-
-  return {}
-}
 
 export default function NewProduct() {
 

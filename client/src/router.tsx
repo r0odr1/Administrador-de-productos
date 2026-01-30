@@ -1,7 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import Layout from "./layout/Layout";
 import Products from "./views/Products";
-import NewProduct, { action as newProductAction } from "./views/NewProduct";
+import NewProduct from "./views/NewProduct";
+import { action as newProductAction } from "./views/NewProductAction";
 
 export const router = createBrowserRouter([
   {
