@@ -1,6 +1,7 @@
 import express from 'express';
 import colors from 'colors';
 import cors, { CorsOptions } from 'cors'
+import morgan from 'morgan'
 import swaggerUi from 'swagger-ui-express';
 // Se importa aqui y luego lo llamas en la misma parte que llamas al spec
 import swaggerSpec, { swaggerUiOptions } from './config/swagger';
@@ -40,6 +41,8 @@ server.use(cors(corsOptions))
 
 // Leer datos de formularios
 server.use(express.json());
+
+server.use(morgan('dev'))
 server.use('/api/products', router);
 
 // Docs
